@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coastline Café – Demo Website</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Nunito+Sans:wght@400;600&display=swap">
+<style>
+:root{--bg:#f3efe6;--ink:#10303a;--sea:#1f6f78;--sand:#e8d9b8;--coral:#e4572e;--card:#fffaf0;--line:#d9ccae;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e2229;--ink:#f1ebdc;--sea:#6cc3c9;--sand:#1b3a43;--coral:#ff7a50;--card:#143039;--line:#2a4a54}}
+:root[data-theme="dark"]{--bg:#0e2229;--ink:#f1ebdc;--sea:#6cc3c9;--sand:#1b3a43;--coral:#ff7a50;--card:#143039;--line:#2a4a54}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Nunito Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1;margin:0}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:12px}
+nav b{font-family:Fraunces,Georgia,serif;font-size:20px}
+nav div a{margin-left:16px;text-decoration:none;font-weight:600;font-size:15px}
+.hero{background:linear-gradient(180deg,var(--sea) 0,var(--sea) 62%,var(--sand) 62%);color:#fff;padding:56px 0 0;overflow:hidden}
+.hero h1{font-size:clamp(40px,9vw,76px);font-weight:800;max-width:11em}
+.hero p{max-width:30em;font-size:19px;margin:18px 0 26px}
+.btn{display:inline-block;background:var(--coral);color:#fff;padding:14px 24px;border-radius:999px;font-weight:600;text-decoration:none}
+.btn.alt{background:transparent;border:2px solid #fff;margin-left:8px}
+.wave{display:block;width:100%;height:60px;margin-top:40px}
+section{padding:56px 0}
+h2{font-size:clamp(30px,6vw,44px);margin-bottom:20px}
+.about{display:grid;gap:24px}
+@media(min-width:720px){.about{grid-template-columns:1fr 1fr;align-items:center}}
+.stat{background:var(--sand);border-radius:20px;padding:28px}
+.stat b{font-family:Fraunces,Georgia,serif;font-size:28px;display:block}
+.menu{list-style:none;margin:0;padding:0;display:grid;gap:0 40px}
+@media(min-width:720px){.menu{grid-template-columns:1fr 1fr}}
+.menu li{display:flex;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px dashed var(--line)}
+.menu small{display:block;opacity:.75}
+.menu .p{font-weight:600;white-space:nowrap}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.gal div{aspect-ratio:3/4;border-radius:16px;display:flex;align-items:flex-end;padding:12px;color:#fff;font-weight:600;font-size:14px}
+.g1{background:linear-gradient(160deg,#c9854a,#5b3a21)}.g2{background:linear-gradient(160deg,#2a8f94,#10303a)}.g3{background:linear-gradient(160deg,#e4572e,#8a2b14)}
+.contact{display:grid;gap:20px;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px}
+@media(min-width:720px){.contact{grid-template-columns:1fr 1fr}}
+.contact dt{font-weight:600}.contact dd{margin:0 0 12px}
+.tag{font-size:13px;opacity:.7;padding:24px 0 40px;text-align:center}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <nav><b>Coastline Café</b><div><a href="#menu">Menu</a><a href="#visit">Visit</a></div></nav>
+    <h1>Discover your next favourite spot.</h1>
+    <p>Slow coffee, fresh bakes and sea-breeze seating, five minutes from the promenade.</p>
+    <a class="btn" href="https://wa.me/910000000000?text=Hi%20Coastline%20Caf%C3%A9%2C%20I%27d%20like%20to%20reserve%20a%20table." target="_blank" rel="noopener">Reserve on WhatsApp</a>
+    <a class="btn alt" href="#menu">See the menu</a>
+  </div>
+  <svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30 Q150 0 300 30 T600 30 T900 30 T1200 30 V60 H0Z" fill="var(--bg)"/></svg>
+</header>
+
+<main class="wrap">
+  <section id="about" class="about">
+    <div>
+      <h2>A café built around the view.</h2>
+      <p>Coastline Café opened in 2019 with one idea: good coffee tastes better when you are not in a hurry. We bake every morning, roast in small batches and keep the best tables facing the water.</p>
+    </div>
+    <div class="stat"><b>7 AM – 11 PM</b>Open every day, with live music on Saturday evenings.</div>
+  </section>
+
+  <section id="menu">
+    <h2>Menu favourites</h2>
+    <ul class="menu">
+      <li><span>Filter Coffee<small>Slow-brewed, served hot or iced</small></span><span class="p">₹120</span></li>
+      <li><span>Cold Coffee<small>With vanilla ice cream</small></span><span class="p">₹180</span></li>
+      <li><span>Masala Chai<small>Ginger, cardamom, fresh milk</small></span><span class="p">₹90</span></li>
+      <li><span>Grilled Sandwich<small>Cheese, tomato, green chutney</small></span><span class="p">₹160</span></li>
+      <li><span>Peri-Peri Fries<small>Crisp, with garlic dip</small></span><span class="p">₹150</span></li>
+      <li><span>Chocolate Brownie<small>Warm, with a scoop of ice cream</small></span><span class="p">₹170</span></li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <h2>Inside Coastline</h2>
+    <div class="gal"><div class="g1">Morning bakes</div><div class="g2">Sea-view seats</div><div class="g3">Evening lights</div></div>
+  </section>
+
+  <section id="visit">
+    <h2>Come say hello</h2>
+    <div class="contact">
+      <dl style="margin:0">
+        <dt>Address</dt><dd>12 Seaface Road, Your City (placeholder)</dd>
+        <dt>Hours</dt><dd>Daily, 7 AM – 11 PM</dd>
+        <dt>Phone</dt><dd>+91 00000 00000</dd>
+      </dl>
+      <div>
+        <p>Planning a birthday or a group visit? Message us and we will hold a table.</p>
+        <a class="btn" href="https://wa.me/910000000000" target="_blank" rel="noopener">Message on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+  <p class="tag">Demo website for a fictional café. Your business name, menu and photos go here.</p>
+</main>
+</body>
+</html>
